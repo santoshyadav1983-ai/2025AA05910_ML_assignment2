@@ -456,34 +456,3 @@ if best_auc_score >= 0.85:
     print(f"• The {best_auc_model} shows excellent ability to distinguish between classes")
 
 print("\n" + "="*80)
-
-# ==============================================================================
-# 14. Feature Importance Analysis
-#
-# Analyze which features contribute most to predictions in tree-based ensemble 
-# models (Random Forest and XGBoost).
-# ==============================================================================
-
-print("\n" + "="*80)
-print("FEATURE IMPORTANCE")
-print("="*80)
-
-# Random Forest Feature Importance
-print("\nRandom Forest - Top 10 Important Features:")
-feature_importance_rf = pd.DataFrame({
-    'Feature': X.columns,
-    'Importance': rf_model.feature_importances_
-}).sort_values('Importance', ascending=False)
-print(feature_importance_rf.head(10).to_string(index=False))
-
-# XGBoost Feature Importance
-print("\nXGBoost - Top 10 Important Features:")
-feature_importance_xgb = pd.DataFrame({
-    'Feature': X.columns,
-    'Importance': xgb_model.feature_importances_
-}).sort_values('Importance', ascending=False)
-print(feature_importance_xgb.head(10).to_string(index=False))
-
-print("\n" + "="*80)
-print("ANALYSIS COMPLETE!")
-print("="*80)
