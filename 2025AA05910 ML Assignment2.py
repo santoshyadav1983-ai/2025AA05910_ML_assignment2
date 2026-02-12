@@ -309,12 +309,6 @@ print("="*80)
 # Create results dataframe
 results_df = pd.DataFrame(results)
 
-# Display the table
-print("\n")
-print(results_df.to_string(index=False))
-
-# Alternative: Display as formatted table
-print("\n\nFormatted Table:")
 print("-" * 120)
 print(f"{'ML Model Name':<40} {'Accuracy':>10} {'AUC':>10} {'Precision':>10} {'Recall':>10} {'F1':>10} {'MCC':>10}")
 print("-" * 120)
